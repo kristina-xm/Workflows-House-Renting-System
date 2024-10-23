@@ -24,7 +24,7 @@ namespace HouseRentingSystem.Services.Rents
                 .Houses
                 .Include(h => h.Agent.User)
                 .Include(h => h.Renter)
-                .Where(h => h.RenterId == null)
+                .Where(h => h.RenterId != null)
                 .ProjectTo<RentServiceModel>(this.mapper.ConfigurationProvider)
                 .ToList();
         }
